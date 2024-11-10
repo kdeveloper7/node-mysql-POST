@@ -8,6 +8,9 @@ const db = mysql.createPool({
     user: process.env.DB_USER,
     password: process.env.DB_PASSWORD,
     database: process.env.DB_NAME,
+    waitForConnections: true,
+    connectionLimit: 10,
+    queueLimit: 0
 });
 
 try {
@@ -17,4 +20,5 @@ try {
     console.error('Error connecting to the database:', error);
 }
 
-export default db;
+
+export default db;  // Exportamos el pool para usarlo en los modelos

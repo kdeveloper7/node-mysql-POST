@@ -6,40 +6,68 @@
   <title>Formulario de Contacto</title>
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="bg-gray-100 flex justify-center items-center h-screen">
+<body class="bg-gray-100">
 
-  <div class="w-full max-w-md bg-white p-8 rounded-lg shadow-lg">
-    <h1 class="text-2xl font-semibold text-center mb-6">Formulario de Contacto</h1>
+  <div class="container mx-auto px-4 py-8">
 
-    <form id="contactForm" class="space-y-4">
-      <div>
-        <label for="name" class="block text-sm font-medium text-gray-700">Nombre</label>
-        <input type="text" id="name" name="name" required class="mt-1 p-2 w-full border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400">
-      </div>
-      <div>
-        <label for="phone" class="block text-sm font-medium text-gray-700">Teléfono</label>
-        <input type="text" id="phone" name="phone" required class="mt-1 p-2 w-full border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400">
-      </div>
-      <div>
-        <label for="email" class="block text-sm font-medium text-gray-700">Correo Electrónico</label>
-        <input type="email" id="email" name="email" required class="mt-1 p-2 w-full border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400">
-      </div>
-      <div>
-        <label for="subject" class="block text-sm font-medium text-gray-700">Asunto</label>
-        <input type="text" id="subject" name="subject" required class="mt-1 p-2 w-full border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400">
-      </div>
-      <div>
-        <label for="details" class="block text-sm font-medium text-gray-700">Detalles</label>
-        <textarea id="details" name="details" required rows="4" class="mt-1 p-2 w-full border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400"></textarea>
-      </div>
-      <div class="flex justify-center">
-        <button type="submit" class="w-full bg-blue-500 text-white p-2 rounded-md hover:bg-blue-600">Enviar</button>
-      </div>
-    </form>
+    <!-- Sección de Gestión de Tareas -->
+    <div class="w-full bg-white p-8 rounded-lg shadow-lg mb-8">
+      <h2 class="text-2xl font-bold mb-6">Gestión de Tareas</h2>
 
-    <div id="responseMessage" class="mt-4 hidden text-center text-green-500"></div>
+      <!-- Lista de Tareas -->
+      <ul id="taskList" class="bg-white p-6 rounded-lg shadow-md space-y-4">
+        <!-- Las tareas se mostrarán aquí -->
+      </ul>
+
+      <!-- Formulario de Nueva Tarea -->
+      <h3 class="text-xl font-semibold mb-4">Nueva Tarea</h3>
+      <form id="taskForm" class="bg-white p-6 rounded-lg shadow-md mb-8">
+        <label for="taskTitle" class="block mb-2">Título de la tarea:</label>
+        <input type="text" id="taskTitle" class="w-full p-2 mb-4 border rounded" required>
+
+        <label for="taskDescription" class="block mb-2">Descripción:</label>
+        <textarea id="taskDescription" class="w-full p-2 mb-4 border rounded" required></textarea>
+
+        <button type="submit" class="bg-green-500 text-white p-2 rounded">Crear Tarea</button>
+      </form>
+    </div>
+
+    <!-- Sección de Formulario de Contacto -->
+    <div class="w-full bg-white p-8 rounded-lg shadow-lg">
+      <h1 class="text-2xl font-semibold text-center mb-6">Formulario de Contacto</h1>
+
+      <form id="contactForm" class="space-y-4">
+        <div>
+          <label for="name" class="block text-sm font-medium text-gray-700">Nombre</label>
+          <input type="text" id="name" name="name" required class="mt-1 p-2 w-full border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400">
+        </div>
+        <div>
+          <label for="phone" class="block text-sm font-medium text-gray-700">Teléfono</label>
+          <input type="text" id="phone" name="phone" required class="mt-1 p-2 w-full border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400">
+        </div>
+        <div>
+          <label for="email" class="block text-sm font-medium text-gray-700">Correo Electrónico</label>
+          <input type="email" id="email" name="email" required class="mt-1 p-2 w-full border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400">
+        </div>
+        <div>
+          <label for="subject" class="block text-sm font-medium text-gray-700">Asunto</label>
+          <input type="text" id="subject" name="subject" required class="mt-1 p-2 w-full border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400">
+        </div>
+        <div>
+          <label for="details" class="block text-sm font-medium text-gray-700">Detalles</label>
+          <textarea id="details" name="details" required rows="4" class="mt-1 p-2 w-full border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400"></textarea>
+        </div>
+        <div class="flex justify-center">
+          <button type="submit" class="w-full bg-blue-500 text-white p-2 rounded-md hover:bg-blue-600">Enviar</button>
+        </div>
+      </form>
+
+      <div id="responseMessage" class="mt-4 hidden text-center text-green-500"></div>
+    </div>
+
   </div>
 
   <script src="script.js"></script>
+  <script src="tasks.js"></script>
 </body>
 </html>
